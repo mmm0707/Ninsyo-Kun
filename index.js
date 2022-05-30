@@ -13,7 +13,7 @@ let userPass = '456';
 // });
 
 //ログイン処理
-//te: 11桁入力、ハイフンなし　pw:8～10桁　半角英数字　大文字小文字含む
+//tel: 11桁入力、ハイフンなし　pw:8～10桁　半角英数字　大文字小文字含む
 login.addEventListener('click', e => {
     const userTelValue = document.getElementById('tel').value;
     const userPassValue = document.getElementById('password').value;

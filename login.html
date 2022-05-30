@@ -13,10 +13,10 @@
     <!-- main -->
     <h1>認証くん!!!</h1>
     <form neme="login_form">
-        <input id="tel" type="text" name="text" placeholder="電話番号">
+        <input id="tel" type="text" name="tel" maxlength='11' placeholder="電話番号" pattern="^[a-zA-Z0-9]+$">
     </form>
     <form>
-        <input id="password" type="text" name="password" placeholder="パスワード">
+        <input id="password" type="text" name="password" maxlength='10' placeholder="パスワード">
     </form>
     <input id="login" type="submit" value="認証する">
 
