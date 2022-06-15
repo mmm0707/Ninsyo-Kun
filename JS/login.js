@@ -12,7 +12,7 @@ request.send();
 request.onload = function (e) {
     // レスポンスが返ってきた時の処理
     if (this.status === 200) {
-        console.log(request.responsText);
+        console.log(request.responseText);
     }
 };
 
