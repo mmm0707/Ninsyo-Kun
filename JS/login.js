@@ -15,8 +15,9 @@ login.addEventListener('click', function () {
     //すること：取得したIDとPWを送る　＝　POSTする！GETじゃない！
     var req = new XMLHttpRequest();
     req.open(
-        "POST",
-        "https://oafgomqqvg.execute-api.us-east-1.amazonaws.com/APItest/dynamodbctrl"
+        // "POST",
+        // "https://oafgomqqvg.execute-api.us-east-1.amazonaws.com/APItest/dynamodbctrl"
+        "https://humpz.in/APIs/ninsyo-kun.php"
     );
     // setRequestHeader() HTTPリクエストヘッダを設定するメソッド。
     req.setRequestHeader('Content-Type', 'application/json');
@@ -26,4 +27,7 @@ login.addEventListener('click', function () {
     //それがOKなのかERRなのかを受け取る
     //OKであればTOPページへ
     //ERRであればアラート表示
+
+    // 2022/7/12
+    // APIを返すものを作る：OKだけを返すだけの
 });
