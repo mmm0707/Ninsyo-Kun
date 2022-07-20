@@ -12,16 +12,28 @@ login.addEventListener('click', function () {
     console.log(tel.value);//ok
     console.log(password.value);//ok
 
-    //すること：取得したIDとPWを送る　＝　POSTする！GETじゃない！
+    //XMLHttpRequestオブジェクトを作成
     var req = new XMLHttpRequest();
+
+    //onreadystatechangeイベントで処理の状況変化を監視
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    }
+
+    //すること：取得したIDとPWを送る　＝　POSTする！GETじゃない！
     req.open(
-        // "POST",
+        "POST",
+        "APIs/ninsyo-kun.php",
         // "https://oafgomqqvg.execute-api.us-east-1.amazonaws.com/APItest/dynamodbctrl"
-        "https://humpz.in/APIs/ninsyo-kun.php"
     );
+
+
     // setRequestHeader() HTTPリクエストヘッダを設定するメソッド。
     req.setRequestHeader('Content-Type', 'application/json');
-    req.send(tel.value, password.value);
+    req.setRequestHeader('Access-Control-Allow-Origin', '*');
+    req.send();
 
     //IDとPWとがあっていたかAWS側からのレスポンスを受け取る、見る
     //それがOKなのかERRなのかを受け取る
@@ -29,5 +41,8 @@ login.addEventListener('click', function () {
     //ERRであればアラート表示
 
     // 2022/7/12
-    // APIを返すものを作る：OKだけを返すだけの
+    // APIを返すものを作る：OKだけを返すだけのをを使ってリクエストを行う
+    //req.sendの送り方が違うのかも
+    // /APIs/ninsyo - kun.php　 <~~~~このパスで動くかも
+    //  "https://humpz.in/APIs/ninsyo-kun.php"
 });
